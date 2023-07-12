@@ -16,7 +16,7 @@ function checkGameOver(guess, guessCount) {
 }
 
 function Game() {
-  const [guesses, setGuesses] = React.useState(() => range(NUM_OF_GUESSES_ALLOWED).map(() => ({ guess: '' })));
+  const [guesses, setGuesses] = React.useState(() => range(NUM_OF_GUESSES_ALLOWED).map(() => ''));
   const [guessCount, setCurrentGuess] = React.useState(0);
   const [gameOver, setGameOver] = React.useState(false);
 
@@ -28,7 +28,7 @@ function Game() {
       setCurrentGuess(guessCount + 1);
     }
 
-    setGameOver(checkGameOver(guess.guess, guessCount + 1));
+    setGameOver(checkGameOver(guess, guessCount + 1));
   }
 
   return (

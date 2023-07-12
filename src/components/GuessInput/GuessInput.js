@@ -6,7 +6,7 @@ function GuessInput({ submitGuess, gameOver }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    submitGuess({ guess: input });
+    submitGuess(input);
     setInput('');
   }
 
